@@ -9,11 +9,21 @@ jobs:
   install-pip-deps:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v6
       - name: Print step name
-        run: echo "Installing all necessary node dependencies.."
+        run: echo "Installing all required depdendencies.." 
       - name: List all files
         run: ls
+      - uses: actions/checkout@v6
+        with:
+          repository: 'https://github.com/mtararujs/python-greetings'
+          path: python-greetings
+      - name: working directory 
+        working-directory: python-greetings
+        run: python3 -m venv venv
+      - name: bibliotēku/pakotņu instalācijai pret virtualizēto vidi
+        working-directory: python-greetings
+        run: ./venv/bin/python -m pip install -r requirements.txt
+
   deploy-to-dev:
     runs-on: self-hosted
     needs: install-pip-deps
@@ -27,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
-        run: echo "Testing Sample BOOk Application service has started on DEV environment"
+        run: echo "Testing Sample Book Application service has started on DEV environment"
   deploy-to-stg:
     runs-on: self-hosted
     needs: tests-on-dev
@@ -41,7 +51,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
-        run: echo "Testing Sample BOOk Application service has started on STG environment" 
+        run: echo "Testing Sample Book Application service has started on STG environment" 
   deploy-to-preprod:
     runs-on: self-hosted
     needs: tests-on-stg
@@ -55,7 +65,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
-        run: echo "Testing Sample BOOk Application service has started on PREPROD environment" 
+        run: echo "Testing Sample Book Application service has started on PREPROD environment" 
   deploy-to-prod:
     runs-on: self-hosted
     needs: tests-on-preprod
@@ -69,6 +79,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
-        run: echo "Testing Sample BOOk Application service has started on PROD environment"
+        run: echo "Testing Sample Book Application service has started on PROD environment"
 
         
