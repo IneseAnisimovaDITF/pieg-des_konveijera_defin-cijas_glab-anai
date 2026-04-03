@@ -16,48 +16,56 @@ jobs:
         run: ls
   deploy-to-dev:
     runs-on: self-hosted
+    needs: install-pip-deps
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Deployment to DEV environment has started.."
   tests-on-dev:
     runs-on: self-hosted
+    needs: deploy-to-dev
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Testing Sample BOOk Application service has started on DEV environment"
   deploy-to-stg:
     runs-on: self-hosted
+    needs: tests-on-dev
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Deployment to STG environment has started.."
   tests-on-stg:
     runs-on: self-hosted
+    needs: deploy-to-stg
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Testing Sample BOOk Application service has started on STG environment" 
   deploy-to-preprod:
     runs-on: self-hosted
+    needs: tests-on-stg
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Deployment to PREPROD environment has started.."
   tests-on-preprod:
     runs-on: self-hosted
+    needs: deploy-to-preprod
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Testing Sample BOOk Application service has started on PREPROD environment" 
   deploy-to-prod:
     runs-on: self-hosted
+    needs: tests-on-preprod
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Deployment to PROD environment has started.."
   Tests-on-prod:
     runs-on: self-hosted
+    needs: deploy-to-prod
     steps:
       - uses: actions/checkout@v6
       - name: Print step name
