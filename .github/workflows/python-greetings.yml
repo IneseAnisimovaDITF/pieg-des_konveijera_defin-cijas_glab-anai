@@ -1,0 +1,64 @@
+name: python greetings
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  install-pip-deps:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: Print step name
+        run: echo "Installing all necessary node dependencies.."
+  deploy-to-dev:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: Print step name
+        run: echo "Deployment to DEV environment has started.."
+  tests-on-dev:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: Print step name
+        run: echo "Testing Sample BOOk Application service has started on DEV environment"
+  deploy-to-stg:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: Print step name
+        run: echo "Deployment to STG environment has started.."
+  tests-on-stg:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: Print step name
+        run: echo "Testing Sample BOOk Application service has started on STG environment" 
+  deploy-to-preprod:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: Print step name
+        run: echo "Deployment to PREPROD environment has started.."
+  tests-on-preprod:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: Print step name
+        run: echo "Testing Sample BOOk Application service has started on PREPROD environment" 
+  deploy-to-prod:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: Print step name
+        run: echo "Deployment to PROD environment has started.."
+  Tests-on-prod:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: Print step name
+        run: echo "Testing Sample BOOk Application service has started on PROD environment"
+
+        
