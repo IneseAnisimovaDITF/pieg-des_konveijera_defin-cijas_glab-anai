@@ -15,7 +15,7 @@ jobs:
         run: ls
       - uses: actions/checkout@v6
         with:
-          repository: 'https://github.com/mtararujs/python-greetings'
+          repository: 'mtararujs/python-greetings'
           path: python-greetings
       - name: working directory 
         working-directory: python-greetings
