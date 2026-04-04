@@ -61,10 +61,10 @@ jobs:
           repository: 'mtararujs/course-js-api-framework '
           path: course-js-api-framework
       - name: working directory 
-        working-directory: python-greetings
+        working-directory: course-js-api-framework
         run: npm install -g pm2
       - name: izpildit npm run
-        working-directory: python-greetings
+        working-directory: course-js-api-framework
         run: npm run greetings greetings_dev
   
   deploy-to-stg:
