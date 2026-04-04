@@ -62,7 +62,7 @@ jobs:
           path: course-js-api-framework
       - name: working directory 
         working-directory: course-js-api-framework
-        run: npm install -g pm2
+        run: npm install
       - name: izpildit npm run
         working-directory: course-js-api-framework
         run: npm run greetings greetings_dev
