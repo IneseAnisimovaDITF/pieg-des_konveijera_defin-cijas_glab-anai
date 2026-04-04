@@ -77,12 +77,12 @@ jobs:
         # with:
         #   repository: 'mtararujs/python-greetings'
         #   path: python-greetings
-      - name: working directory 
-        working-directory: python-greetings
-        run: python -m venv venv
-      - name: bibliotēku/pakotņu instalācijai pret virtualizēto vidi
-        working-directory: python-greetings
-        run: .\venv\Scripts\python.exe -m pip install -r requirements.txt
+      # - name: working directory 
+      #   working-directory: python-greetings
+      #   run: python -m venv venv
+      # - name: bibliotēku/pakotņu instalācijai pret virtualizēto vidi
+      #   working-directory: python-greetings
+      #   run: .\venv\Scripts\python.exe -m pip install -r requirements.txt
       - name: apstādinātu esošo vides servisu 
         shell: cmd
         working-directory: python-greetings
