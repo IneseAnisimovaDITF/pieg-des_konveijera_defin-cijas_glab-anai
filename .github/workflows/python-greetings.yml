@@ -37,10 +37,10 @@ jobs:
           path: python-greetings
       - name: apstādinātu esošo vides servisu 
         working-directory: python-greetings
-        run: pm2 delete greetings-app-dev & set "errorlevel=0"
+        run: pm2 delete greetings-app-<vides_nosaukums> & EXIT /B 0)
       - name: PM2 example
         working-directory: python-greetings
-        run: pm2 start app.py --name python-greetings-dev --interpreter venv\Scripts\python.exe
+        run: pm2 start app.py --name python-greetings-dev --interpreter venv\Scripts\python.exe -- --port 7001
   tests-on-dev:
     runs-on: self-hosted
     needs: deploy-to-dev
