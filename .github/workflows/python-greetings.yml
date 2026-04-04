@@ -19,10 +19,10 @@ jobs:
           path: python-greetings
       - name: working directory 
         working-directory: python-greetings
-        run: python3 -m venv venv
+        run: python -m venv venv
       - name: bibliotēku/pakotņu instalācijai pret virtualizēto vidi
         working-directory: python-greetings
-        run: ./venv/bin/python -m pip install -r requirements.txt
+        run: .\venv\bin\python -m pip install -r requirements.txt
 
   deploy-to-dev:
     runs-on: self-hosted
