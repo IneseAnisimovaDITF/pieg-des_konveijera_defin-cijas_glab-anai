@@ -36,9 +36,11 @@ jobs:
           repository: 'mtararujs/python-greetings'
           path: python-greetings
       - name: apstādinātu esošo vides servisu 
+        shell: cmd
         working-directory: python-greetings
-        run: pm2 delete greetings-app-dev & EXIT /B 0)
+        run: pm2 delete greetings-app-dev & EXIT /B 0
       - name: PM2 example
+        shell: cmd
         working-directory: python-greetings
         run: pm2 start app.py --name python-greetings-dev --interpreter venv\Scripts\python.exe -- --port 7001
   tests-on-dev:
