@@ -74,9 +74,9 @@ jobs:
       - name: Print step name
         run: echo "Deployment to STG environment has started.."
       - uses: actions/checkout@v6
-        with:
-          repository: 'mtararujs/python-greetings'
-          path: python-greetings
+        # with:
+        #   repository: 'mtararujs/python-greetings'
+        #   path: python-greetings
       - name: working directory 
         working-directory: python-greetings
         run: python -m venv venv
