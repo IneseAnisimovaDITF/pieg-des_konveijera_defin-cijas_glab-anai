@@ -151,7 +151,7 @@ jobs:
         run: echo "Deployment to PROD environment has started.."
       - uses: actions/checkout@v6
         with:
-          repository: 'mtararujs/python-greetings'
+          repository: mtararujs/python-greetings
           path: python-greetings
           clean: false
       - name: apstādinātu esošo vides servisu 
