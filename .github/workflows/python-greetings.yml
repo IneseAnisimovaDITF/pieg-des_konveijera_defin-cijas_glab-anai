@@ -157,11 +157,11 @@ jobs:
       - name: apstādinātu esošo vides servisu 
         shell: cmd
         working-directory: python-greetings
-        run: pm2 delete greetings-app-preprod & EXIT /B 0
+        run: pm2 delete greetings-app-prod & EXIT /B 0
       - name: PM2 example
         shell: cmd
         working-directory: python-greetings
-        run: pm2 start app.py --name greetings-app-preprod --interpreter venv\Scripts\python.exe -- --port 7004
+        run: pm2 start app.py --name greetings-app-prod --interpreter venv\Scripts\python.exe -- --port 7004
   Tests-on-prod:
     runs-on: self-hosted
     needs: deploy-to-prod
