@@ -54,7 +54,6 @@ jobs:
     runs-on: self-hosted
     needs: deploy-to-dev
     steps:
-      - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Testing Sample Book Application service has started on DEV environment"
       - uses: actions/checkout@v6
