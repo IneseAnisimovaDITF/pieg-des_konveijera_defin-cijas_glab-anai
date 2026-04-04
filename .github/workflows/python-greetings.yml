@@ -22,7 +22,7 @@ jobs:
         run: python -m venv venv
       - name: bibliotēku/pakotņu instalācijai pret virtualizēto vidi
         working-directory: python-greetings
-        run: .\venv\bin\python -m pip install -r requirements.txt
+        run: .\venv\bin\python.exe -m pip install -r requirements.txt
 
   deploy-to-dev:
     runs-on: self-hosted
