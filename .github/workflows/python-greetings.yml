@@ -97,6 +97,7 @@ jobs:
         with:
           repository: 'mtararujs/course-js-api-framework '
           path: course-js-api-framework
+          clean: false
       - name: working directory 
         working-directory: course-js-api-framework
         run: npm install
