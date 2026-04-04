@@ -146,7 +146,6 @@ jobs:
     runs-on: self-hosted
     needs: tests-on-preprod
     steps:
-      - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Deployment to PROD environment has started.."
       - uses: actions/checkout@v6
