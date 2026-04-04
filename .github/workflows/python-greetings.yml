@@ -71,7 +71,6 @@ jobs:
     runs-on: self-hosted
     needs: tests-on-dev
     steps:
-      - uses: actions/checkout@v6
       - name: Print step name
         run: echo "Deployment to STG environment has started.."
       - uses: actions/checkout@v6
